@@ -34,8 +34,8 @@ namespace Banco.Services
             );
 
             services.AddTransient<IDataService, DataService>();
-            services.AddTransient<IContaCorrenteRepository, ContaCorrenteRepository>();
-            services.AddTransient<ILancamentoRepository, LancamentoRepository>();
+            services.AddSingleton<IContaCorrenteRepository, ContaCorrenteRepository>();
+            services.AddSingleton<ILancamentoRepository, LancamentoRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

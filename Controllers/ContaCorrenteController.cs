@@ -14,10 +14,14 @@ namespace Banco.Services.Controllers
         private readonly IContaCorrenteRepository contaCorrenteRepository;
         private readonly ILancamentoRepository lancamentoRepository;
 
-        public ContaCorrenteController(IContaCorrenteRepository contaCorrenteRepository, ILancamentoRepository lancamentoRepository)
+        //public ContaCorrenteController(IContaCorrenteRepository contaCorrenteRepository, ILancamentoRepository lancamentoRepository)
+        public ContaCorrenteController(ApplicationContext applicationContext)
         {
-            this.contaCorrenteRepository = contaCorrenteRepository;
-            this.lancamentoRepository = lancamentoRepository;
+
+            //this.contaCorrenteRepository = contaCorrenteRepository;
+            //this.lancamentoRepository = lancamentoRepository;
+            this.contaCorrenteRepository = new ContaCorrenteRepository(applicationContext);
+            this.lancamentoRepository = new LancamentoRepository(applicationContext);
         }
 
         [HttpGet]
@@ -34,6 +38,19 @@ namespace Banco.Services.Controllers
             return contaCorrente;
         }
 
+
+        [HttpGet]
+        public ContaCorrente GetByCodigo(string Codigo)
+        {
+            var contaCorrente = this.contaCorrenteRepository.GetByCodigo(Codigo);
+            return contaCorrente;
+        }
+
+        public IActionResult Transferencia(string ContaDe, string ContaPara, decimal Valor) {
+            this.lancamentoRepository.Transferencia(ContaDe, ContaPara, Valor);
+            return null;
+        }
+
         [HttpPost]
         public IActionResult Debito(Lancamento lancamento)
         {
@@ -44,6 +61,7 @@ namespace Banco.Services.Controllers
         [HttpPost]
         public IActionResult Credito(Lancamento lancamento)
         {
+        
             this.lancamentoRepository.Credito(lancamento);
             return View();
         }

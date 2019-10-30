@@ -15,6 +15,17 @@ namespace Banco.Services.Repositories
             this.context = context;
         }
 
+        public ContaCorrente GetByCodigo(string Codigo)
+        {
+
+            return this.context.Set<ContaCorrente>().Where(e => e.Codigo == Codigo).SingleOrDefault();
+        }
+
+        public void Transferencia(string ContaDe, string ContaPara, decimal Valor)
+        {
+            throw new NotImplementedException("Funcão não implementada");
+        }
+
         public void Create(ContaCorrente contaCorrente)
         {
             this.context.Set<ContaCorrente>().Add(contaCorrente);

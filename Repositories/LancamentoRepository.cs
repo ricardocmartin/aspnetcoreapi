@@ -15,28 +15,67 @@ namespace Banco.Services.Repositories
             this.context = context;
         }
 
-        public void Credito(Lancamento lancamento)
-        {
-            lancamento.ContaCorrente.Saldo += lancamento.Valor;
-            this.context.Update(lancamento.ContaCorrente);
 
-            this.context.Add(lancamento);
+        public void Create(Lancamento lancamento)
+        {
+            this.context.Set<Lancamento>().Add(lancamento);
             this.context.SaveChanges();
         }
 
 
+        public void Transferencia(string ContaDe, string ContaPara, decimal Valor)
+        {
+
+            var contaCorrenteDe = this.context.Set<ContaCorrente>().Where(e => e.Codigo == ContaDe).SingleOrDefault();
+            var contaCorrentePara = this.context.Set<ContaCorrente>().Where(e => e.Codigo == ContaPara).SingleOrDefault();
+
+            var lancamentoDebito = new Lancamento()
+            {
+                ContaCorrente = contaCorrenteDe,
+                Valor = Valor
+            };
+
+            var lancamentoCredito = new Lancamento()
+            {
+                ContaCorrente = contaCorrentePara,
+                Valor = Valor
+            };
+
+            this.Debito(lancamentoDebito);
+            this.Credito(lancamentoCredito);
+        }
+
+        public void Credito(Lancamento lancamento)
+        {
+            if (string.IsNullOrEmpty(lancamento.ContaCorrente.Codigo))
+            {
+                lancamento.ContaCorrente = context.Set<ContaCorrente>().Find(lancamento.ContaCorrente.Id);
+            }
+
+            lancamento.ContaCorrente.Saldo += lancamento.Valor;
+            this.context.Set<ContaCorrente>().Update(lancamento.ContaCorrente);
+            this.context.Set<Lancamento>().Add(lancamento);
+            this.context.SaveChanges(true);
+        }
+
         public void Debito(Lancamento lancamento)
         {
-            lancamento.ContaCorrente.Saldo += lancamento.Valor;
+            if (string.IsNullOrEmpty(lancamento.ContaCorrente.Codigo))
+            {
+                lancamento.ContaCorrente = context.Set<ContaCorrente>().Find(lancamento.ContaCorrente.Id);
+            }
+
+            lancamento.ContaCorrente.Saldo -= lancamento.Valor;
 
             //TODO: limite de crédito?
             if (lancamento.ContaCorrente.Saldo < 0)
                 throw new Exception("O Saldo não pode ser negativo");
 
-            //TODO: Resiliência?
-            this.context.Update(lancamento.ContaCorrente);
-            this.context.Add(lancamento);
-            this.context.SaveChanges();
+            this.context.Set<ContaCorrente>().Update(lancamento.ContaCorrente);
+            this.context.Set<Lancamento>().Add(lancamento);
+            this.context.SaveChanges(true);
         }
+
+
     }
 }
