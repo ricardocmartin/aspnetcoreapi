@@ -1,0 +1,16 @@
+C:\src\ContaCorrente\ContaCorrente\bin\Debug\netcoreapp2.1\appsettings.Development.json
+C:\src\ContaCorrente\ContaCorrente\bin\Debug\netcoreapp2.1\appsettings.json
+C:\src\ContaCorrente\ContaCorrente\bin\Debug\netcoreapp2.1\Properties\launchSettings.json
+C:\src\ContaCorrente\ContaCorrente\bin\Debug\netcoreapp2.1\Banco.Services.deps.json
+C:\src\ContaCorrente\ContaCorrente\bin\Debug\netcoreapp2.1\Banco.Services.runtimeconfig.json
+C:\src\ContaCorrente\ContaCorrente\bin\Debug\netcoreapp2.1\Banco.Services.runtimeconfig.dev.json
+C:\src\ContaCorrente\ContaCorrente\bin\Debug\netcoreapp2.1\Banco.Services.dll
+C:\src\ContaCorrente\ContaCorrente\bin\Debug\netcoreapp2.1\Banco.Services.pdb
+C:\src\ContaCorrente\ContaCorrente\obj\Debug\netcoreapp2.1\Banco.Services.csprojAssemblyReference.cache
+C:\src\ContaCorrente\ContaCorrente\obj\Debug\netcoreapp2.1\Banco.Services.RazorAssemblyInfo.cache
+C:\src\ContaCorrente\ContaCorrente\obj\Debug\netcoreapp2.1\Banco.Services.RazorAssemblyInfo.cs
+C:\src\ContaCorrente\ContaCorrente\obj\Debug\netcoreapp2.1\Banco.Services.AssemblyInfoInputs.cache
+C:\src\ContaCorrente\ContaCorrente\obj\Debug\netcoreapp2.1\Banco.Services.AssemblyInfo.cs
+C:\src\ContaCorrente\ContaCorrente\obj\Debug\netcoreapp2.1\Banco.Services.RazorTargetAssemblyInfo.cache
+C:\src\ContaCorrente\ContaCorrente\obj\Debug\netcoreapp2.1\Banco.Services.dll
+C:\src\ContaCorrente\ContaCorrente\obj\Debug\netcoreapp2.1\Banco.Services.pdb

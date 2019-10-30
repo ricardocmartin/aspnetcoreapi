@@ -1,0 +1,16 @@
+C:\src\ContaCorrente\ContaCorrente\bin\Debug\netcoreapp2.1\appsettings.Development.json
+C:\src\ContaCorrente\ContaCorrente\bin\Debug\netcoreapp2.1\appsettings.json
+C:\src\ContaCorrente\ContaCorrente\bin\Debug\netcoreapp2.1\Properties\launchSettings.json
+C:\src\ContaCorrente\ContaCorrente\bin\Debug\netcoreapp2.1\ContaCorrente.deps.json
+C:\src\ContaCorrente\ContaCorrente\bin\Debug\netcoreapp2.1\ContaCorrente.runtimeconfig.json
+C:\src\ContaCorrente\ContaCorrente\bin\Debug\netcoreapp2.1\ContaCorrente.runtimeconfig.dev.json
+C:\src\ContaCorrente\ContaCorrente\bin\Debug\netcoreapp2.1\ContaCorrente.dll
+C:\src\ContaCorrente\ContaCorrente\bin\Debug\netcoreapp2.1\ContaCorrente.pdb
+C:\src\ContaCorrente\ContaCorrente\obj\Debug\netcoreapp2.1\ContaCorrente.csprojAssemblyReference.cache
+C:\src\ContaCorrente\ContaCorrente\obj\Debug\netcoreapp2.1\ContaCorrente.RazorAssemblyInfo.cache
+C:\src\ContaCorrente\ContaCorrente\obj\Debug\netcoreapp2.1\ContaCorrente.RazorAssemblyInfo.cs
+C:\src\ContaCorrente\ContaCorrente\obj\Debug\netcoreapp2.1\ContaCorrente.AssemblyInfoInputs.cache
+C:\src\ContaCorrente\ContaCorrente\obj\Debug\netcoreapp2.1\ContaCorrente.AssemblyInfo.cs
+C:\src\ContaCorrente\ContaCorrente\obj\Debug\netcoreapp2.1\ContaCorrente.RazorTargetAssemblyInfo.cache
+C:\src\ContaCorrente\ContaCorrente\obj\Debug\netcoreapp2.1\ContaCorrente.dll
+C:\src\ContaCorrente\ContaCorrente\obj\Debug\netcoreapp2.1\ContaCorrente.pdb
