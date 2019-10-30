@@ -17,7 +17,16 @@ namespace Banco.Services
             public void InitDB()
             {
                 this.context.Database.Migrate();
+                //this.Seed();
+            }
 
+            private void Seed()
+            {
+                this.context.Set<ContaCorrente>().Add(new ContaCorrente() { Codigo = "0001", Saldo = 1068 });
+                this.context.Set<ContaCorrente>().Add(new ContaCorrente() { Codigo = "0002", Saldo = 17341 });
+
+                this.context.SaveChanges();
+                
             }
         }
 

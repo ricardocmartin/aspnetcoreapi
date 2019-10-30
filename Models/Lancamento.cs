@@ -13,7 +13,11 @@ namespace Banco.Services.Models
 
         [DataMember(IsRequired = true)]
         public DateTime Data { get; set; }
-        
+
+
+        [DataMember(IsRequired = true)]
+        public bool IsCredit { get; set; }
+
         public ContaCorrente ContaCorrente { get; set; }
     }
 }

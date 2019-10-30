@@ -46,9 +46,10 @@ namespace Banco.Services.Controllers
             return contaCorrente;
         }
 
-        public IActionResult Transferencia(string ContaDe, string ContaPara, decimal Valor) {
-            this.lancamentoRepository.Transferencia(ContaDe, ContaPara, Valor);
-            return null;
+        [HttpPost]
+        public IActionResult Transferencia([FromBody] Tranferencia t) {
+            this.lancamentoRepository.Transferencia(t.ContaDe, t.ContaPara, t.Valor);
+            return Ok();
         }
 
         [HttpPost]
@@ -61,7 +62,6 @@ namespace Banco.Services.Controllers
         [HttpPost]
         public IActionResult Credito(Lancamento lancamento)
         {
-        
             this.lancamentoRepository.Credito(lancamento);
             return View();
         }

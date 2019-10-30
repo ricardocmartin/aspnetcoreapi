@@ -9,16 +9,7 @@ namespace Banco.Services.Models
 {
     public class ContaCorrente : GenericModel
     {
-        public ContaCorrente(int Id)
-        {
-            this.Id = Id;
-        }
-
-        public ContaCorrente(string codigo, decimal saldo)
-        {
-            Codigo = codigo;
-            Saldo = saldo;
-        }
+        public ContaCorrente(){}
 
         [DataMember(IsRequired = true)]
         public string Codigo { get; set; }

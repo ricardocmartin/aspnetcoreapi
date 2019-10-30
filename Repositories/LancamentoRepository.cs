@@ -53,6 +53,7 @@ namespace Banco.Services.Repositories
             }
 
             lancamento.ContaCorrente.Saldo += lancamento.Valor;
+            lancamento.IsCredit = true;
             this.context.Set<ContaCorrente>().Update(lancamento.ContaCorrente);
             this.context.Set<Lancamento>().Add(lancamento);
             this.context.SaveChanges(true);
@@ -66,7 +67,7 @@ namespace Banco.Services.Repositories
             }
 
             lancamento.ContaCorrente.Saldo -= lancamento.Valor;
-
+            lancamento.IsCredit = false;
             //TODO: limite de crédito?
             if (lancamento.ContaCorrente.Saldo < 0)
                 throw new Exception("O Saldo não pode ser negativo");
